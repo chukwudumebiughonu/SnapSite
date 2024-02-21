@@ -4,3 +4,11 @@ create an account with uploadthing, generate an api key. uploadthing will be use
 Setup Shadcn-ui with: bunx --bun shadcn-ui@latest init add
 
 Setup local database with: MYSQL workbench
+
+create authentication with: clerk 
+
+add clerk themes with: bun add @clerk/theme
+
+install uploadthing with : bun add uploadthing @uploadthing/react
+
+install clerk/nextjs with: bun add @clerk/nextjs
