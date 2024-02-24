@@ -12,3 +12,11 @@ add clerk themes with: bun add @clerk/theme
 install uploadthing with : bun add uploadthing @uploadthing/react
 
 install clerk/nextjs with: bun add @clerk/nextjs
+
+intall prisma for bun with: bun add prisma @prisma/client
+
+initialize prisma with: bunx prisma init --datasource-provider mysql 
+
+generate prisma with: bunx primsa generate
+
+push db with: bunx prisma db push
