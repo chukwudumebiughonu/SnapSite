@@ -20,3 +20,5 @@ initialize prisma with: bunx prisma init --datasource-provider mysql
 generate prisma with: bunx primsa generate
 
 push db with: bunx prisma db push
+
+add tremor with : bun add @tremor/react
