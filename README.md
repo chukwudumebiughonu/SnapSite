@@ -5,9 +5,11 @@ Setup Shadcn-ui with: bunx --bun shadcn-ui@latest init add
 
 Setup local database with: MYSQL workbench
 
+Update the next.config.mjs file
+
 create authentication with: clerk 
 
-add clerk themes with: bun add @clerk/theme
+add clerk themes with: bun add @clerk/themes
 
 install uploadthing with : bun add uploadthing @uploadthing/react
 
@@ -17,7 +19,7 @@ intall prisma for bun with: bun add prisma @prisma/client
 
 initialize prisma with: bunx prisma init --datasource-provider mysql 
 
-generate prisma with: bunx primsa generate
+generate prisma with: bunx prisma generate
 
 push db with: bunx prisma db push
 

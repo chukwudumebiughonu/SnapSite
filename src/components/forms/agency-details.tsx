@@ -110,8 +110,9 @@ const AgencyDetails = ({ data }: Props) => {
       newUserData = await initUser({ role: 'AGENCY_OWNER' })
       // if (!data?.customerId && !custId) return
       if (!data?.id) {
-      const response = await upsertAgency({
+        const response = await upsertAgency({
         id: data?.id ? data.id : v4(),
+        // customerId: data?.customerId,
         address: values.address,
         agencyLogo: values.agencyLogo,
         city: values.city,
