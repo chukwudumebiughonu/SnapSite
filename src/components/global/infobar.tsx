@@ -38,7 +38,7 @@ const InfoBar = ({ notifications, subAccountId, className, role }: Props) => {
           notifications?.filter((item) => item.subAccountId === subAccountId) ??
             []
         )
-      }
+      } 
     }
     setShowAll((prev) => !prev)
   }

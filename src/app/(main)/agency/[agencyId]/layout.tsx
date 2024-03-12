@@ -53,7 +53,6 @@ const layout = async ({ children, params }: Props) => {
         <div className="relative">
           <BlurPage>{children}</BlurPage>
         </div>
-        {/* {children} */}
       </div>
     </div>
   )
