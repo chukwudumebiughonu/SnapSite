@@ -25,3 +25,5 @@ push db with: bunx prisma db push
 
 add tremor with : bun add @tremor/react
 add uuid with : bun add uuid and then bun add @types/uuid
+
+add tanstack with: bun add @tanstack /react-table
