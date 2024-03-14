@@ -135,14 +135,14 @@ export const createTeamUser = async (agencyId: string, user: User) => {
 };
 
 export const verifyAndAcceptInvitation = async () => {
-  const user = await currentUser()
-  if (!user) return redirect('/sign-in')
+  const user = await currentUser();
+  if (!user) return redirect("/sign-in");
   const invitationExists = await db.invitation.findUnique({
     where: {
       email: user.emailAddresses[0].emailAddress,
-      status: 'PENDING',
+      status: "PENDING",
     },
-  })
+  });
 
   if (invitationExists) {
     const userDetails = await createTeamUser(invitationExists.agencyId, {
@@ -154,35 +154,35 @@ export const verifyAndAcceptInvitation = async () => {
       role: invitationExists.role,
       createdAt: new Date(),
       updatedAt: new Date(),
-    })
+    });
     await saveActivityLogsNotification({
       agencyId: invitationExists?.agencyId,
       description: `Joined`,
       subaccountId: undefined,
-    })
+    });
 
     if (userDetails) {
       await clerkClient.users.updateUserMetadata(user.id, {
         privateMetadata: {
-          role: userDetails.role || 'SUBACCOUNT_USER',
+          role: userDetails.role || "SUBACCOUNT_USER",
         },
-      })
+      });
 
       await db.invitation.delete({
         where: { email: userDetails.email },
-      })
+      });
 
-      return userDetails.agencyId
-    } else return null
+      return userDetails.agencyId;
+    } else return null;
   } else {
     const agency = await db.user.findUnique({
       where: {
         email: user.emailAddresses[0].emailAddress,
       },
-    })
-    return agency ? agency.agencyId : null
+    });
+    return agency ? agency.agencyId : null;
   }
-}
+};
 
 export const updateAgencyDetails = async (
   agencyId: string,
@@ -416,52 +416,50 @@ export const changeUserPermissions = async (
         email: userEmail,
         subAccountId: subAccountId,
       },
-    })
-    return response
+    });
+    return response;
   } catch (error) {
-    console.log('🔴Could not change persmission', error)
+    console.log("🔴Could not change persmission", error);
   }
-}
+};
 export const getSubaccountDetails = async (subaccountId: string) => {
   const response = await db.subAccount.findUnique({
     where: {
       id: subaccountId,
     },
-  })
-  return response
-}
+  });
+  return response;
+};
 
 export const deleteSubAccount = async (subaccountId: string) => {
   const response = await db.subAccount.delete({
     where: {
       id: subaccountId,
     },
-  })
-  return response
-}
+  });
+  return response;
+};
 
 export const deleteUser = async (userId: string) => {
   await clerkClient.users.updateUserMetadata(userId, {
     privateMetadata: {
       role: undefined,
     },
-  })
-  const deletedUser = await db.user.delete({ where: { id: userId } })
+  });
+  const deletedUser = await db.user.delete({ where: { id: userId } });
 
-  return deletedUser
-}
+  return deletedUser;
+};
 
 export const getUser = async (id: string) => {
   const user = await db.user.findUnique({
     where: {
       id,
     },
-  })
+  });
 
-  return user
-}
-
-
+  return user;
+};
 
 export const sendInvitation = async (
   role: Role,
@@ -470,7 +468,7 @@ export const sendInvitation = async (
 ) => {
   const resposne = await db.invitation.create({
     data: { email, agencyId, role },
-  })
+  });
 
   try {
     const invitation = await clerkClient.invitations.createInvitation({
@@ -480,11 +478,11 @@ export const sendInvitation = async (
         throughInvitation: true,
         role,
       },
-    })
+    });
   } catch (error) {
-    console.log(error)
-    throw error
+    console.log(error);
+    throw error;
   }
 
-  return resposne
-}
+  return resposne;
+};
