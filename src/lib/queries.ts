@@ -786,3 +786,14 @@ export const deleteTag = async (tagId: string) => {
   const response = await db.tag.delete({ where: { id: tagId } })
   return response
 }
+
+export const upsertContact = async (
+  contact: Prisma.ContactUncheckedCreateInput
+) => {
+  const response = await db.contact.upsert({
+    where: { id: contact.id || v4() },
+    update: contact,
+    create: contact,
+  })
+  return response
+}
