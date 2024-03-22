@@ -239,4 +239,4 @@ const TagCreator = ({ getSelectedTags, subAccountId, defaultTags }: Props) => {
   )
 }
 
-export default TagCreator
+export default TagCreator;
