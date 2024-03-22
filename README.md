@@ -31,3 +31,9 @@ add tanstack with: bun add @tanstack /react-table
 install drag and drop with: bun add react-beautiful-dnd
 
 add it types with: bun add @types/react-beautiful-dnd 
+
+install stripe with: bun add stripe
+
+install stripe/stripe-js with: bun add @stripe/stripe-js
+
+install @stripe/react-stripe-js with: bun add @stripe/react-stripe-js

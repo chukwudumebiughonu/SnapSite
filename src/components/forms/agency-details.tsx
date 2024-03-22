@@ -1,22 +1,30 @@
-"use client";
-import { useEffect, useState } from "react";
+'use client'
+import { Agency } from '@prisma/client'
 import { useForm } from 'react-hook-form'
-import { useRouter } from "next/navigation";
-import { Agency } from "@prisma/client";
-import * as z from "zod";
-import { zodResolver } from '@hookform/resolvers/zod'
+import React, { useEffect, useState } from 'react'
 import { NumberInput } from '@tremor/react'
 import { v4 } from 'uuid'
 
-import { useToast } from "@/components/ui/use-toast";
-import { AlertDialog } from "@radix-ui/react-alert-dialog";
+import { useRouter } from 'next/navigation'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '../ui/alert-dialog'
+import { zodResolver } from '@hookform/resolvers/zod'
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../ui/card";
+} from '../ui/card'
 import {
   Form,
   FormControl,
@@ -25,18 +33,26 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../ui/form";
-import FileUpload from "../global/file-upload";
-import { Input } from "../ui/input";
-import { Switch } from "../ui/switch";
-import { deleteAgency, initUser, saveActivityLogsNotification, updateAgencyDetails, upsertAgency } from "@/lib/queries";
-import { Button } from "../ui/button";
-import Loading from "../global/loading";
-import { AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "../ui/alert-dialog";
+} from '../ui/form'
+import { useToast } from '../ui/use-toast'
+
+import * as z from 'zod'
+import FileUpload from '../global/file-upload'
+import { Input } from '../ui/input'
+import { Switch } from '../ui/switch'
+import {
+  deleteAgency,
+  initUser,
+  saveActivityLogsNotification,
+  updateAgencyDetails,
+  upsertAgency,
+} from '@/lib/queries'
+import { Button } from '../ui/button'
+import Loading from '../global/loading'
 
 type Props = {
-  data?: Partial<Agency>;
-};
+  data?: Partial<Agency>
+}
 
 const FormSchema = z.object({
   name: z.string().min(2, { message: 'Agency name must be atleast 2 chars.' }),
@@ -52,9 +68,9 @@ const FormSchema = z.object({
 })
 
 const AgencyDetails = ({ data }: Props) => {
-  const { toast } = useToast();
-  const router = useRouter();
-  const [deletingAgency, setDeletingAgency] = useState(false);
+  const { toast } = useToast()
+  const router = useRouter()
+  const [deletingAgency, setDeletingAgency] = useState(false)
   const form = useForm<z.infer<typeof FormSchema>>({
     mode: 'onChange',
     resolver: zodResolver(FormSchema),
@@ -72,7 +88,7 @@ const AgencyDetails = ({ data }: Props) => {
     },
   })
   const isLoading = form.formState.isSubmitting
-  
+
   useEffect(() => {
     if (data) {
       form.reset(data)
@@ -105,14 +121,25 @@ const AgencyDetails = ({ data }: Props) => {
             state: values.zipCode,
           },
         }
+
+        const customerResponse = await fetch('/api/stripe/create-customer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(bodyData),
+        })
+        const customerData: { customerId: string } =
+          await customerResponse.json()
+        custId = customerData.customerId
       }
 
       newUserData = await initUser({ role: 'AGENCY_OWNER' })
-      // if (!data?.customerId && !custId) return
-      if (!data?.id) {
-        const response = await upsertAgency({
+      if (!data?.customerId && !custId) return
+
+      const response = await upsertAgency({
         id: data?.id ? data.id : v4(),
-        // customerId: data?.customerId,
+        customerId: data?.customerId || custId || '',
         address: values.address,
         agencyLogo: values.agencyLogo,
         city: values.city,
@@ -135,7 +162,6 @@ const AgencyDetails = ({ data }: Props) => {
       if (response) {
         return router.refresh()
       }
-    }
     } catch (error) {
       console.log(error)
       toast({
@@ -166,7 +192,7 @@ const AgencyDetails = ({ data }: Props) => {
     }
     setDeletingAgency(false)
   }
-  
+
   return (
     <AlertDialog>
       <Card className="w-full">
@@ -178,8 +204,8 @@ const AgencyDetails = ({ data }: Props) => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-        <Form {...form}>
-        <form
+          <Form {...form}>
+            <form
               onSubmit={form.handleSubmit(handleSubmit)}
               className="space-y-4"
             >
@@ -200,7 +226,7 @@ const AgencyDetails = ({ data }: Props) => {
                     <FormMessage />
                   </FormItem>
                 )}
-              /> 
+              />
               <div className="flex md:flex-row gap-4">
                 <FormField
                   disabled={isLoading}
@@ -216,7 +242,7 @@ const AgencyDetails = ({ data }: Props) => {
                         />
                       </FormControl>
                       <FormMessage />
-                    </FormItem>  
+                    </FormItem>
                   )}
                 />
                 <FormField
@@ -256,6 +282,7 @@ const AgencyDetails = ({ data }: Props) => {
                   )}
                 />
               </div>
+
               <FormField
                 disabled={isLoading}
                 control={form.control}
@@ -400,10 +427,10 @@ const AgencyDetails = ({ data }: Props) => {
               >
                 {isLoading ? <Loading /> : 'Save Agency Information'}
               </Button>
-        </form>
-        </Form> 
+            </form>
+          </Form>
 
-        {data?.id && (
+          {data?.id && (
             <div className="flex flex-row items-center justify-between rounded-lg border border-destructive gap-4 p-4 mt-4">
               <div>
                 <div>Danger Zone</div>
@@ -421,7 +448,6 @@ const AgencyDetails = ({ data }: Props) => {
               </AlertDialogTrigger>
             </div>
           )}
-          
           <AlertDialogContent>
             <AlertDialogHeader>
               <AlertDialogTitle className="text-left">
@@ -443,11 +469,10 @@ const AgencyDetails = ({ data }: Props) => {
               </AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
-          
         </CardContent>
       </Card>
     </AlertDialog>
-  );
-};
+  )
+}
 
-export default AgencyDetails;
+export default AgencyDetails

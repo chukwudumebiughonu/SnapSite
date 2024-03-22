@@ -21,7 +21,6 @@ import { db } from './db'
 import { z } from 'zod'
 
 import Stripe from 'stripe'
-
 export type NotificationWithUser =
   | ({
       User: {
