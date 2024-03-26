@@ -1,6 +1,6 @@
 datasource db {
   provider     = "mysql"
-  url          = env("DATABASE_URL")
+  url          = env("PROD_DATABASE_URL")
   relationMode = "prisma"
 }
 
@@ -396,8 +396,8 @@ model Notification {
 }
 
 enum Plan {
-   price_123456782
-  price_1234567788
+  price_1Ox7KMFVW8SBdgLjxgF0z93i
+  price_1Ox7KMFVW8SBdgLjZ2xCemML
 }
 
 model Subscription {
