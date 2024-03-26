@@ -111,8 +111,7 @@ const LaunchPadPage = async ({ params, searchParams }: Props) => {
               ) : (
                 <Link
                   className="bg-primary py-2 px-4 rounded-md text-white"
-                //   href={stripeOAuthLink}
-                href={'/'}
+                  href={stripeOAuthLink}
                 >
                   Start
                 </Link>
