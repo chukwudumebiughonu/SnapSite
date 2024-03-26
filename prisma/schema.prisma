@@ -396,8 +396,8 @@ model Notification {
 }
 
 enum Plan {
-  price
-  price
+   price_123456782
+  price_1234567788
 }
 
 model Subscription {
