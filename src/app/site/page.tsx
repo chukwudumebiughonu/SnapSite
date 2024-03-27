@@ -29,10 +29,10 @@ export default async function Home() {
         <p className="text-center">Run your agency, in one place</p>
         <div className="bg-gradient-to-r from-primary to-secondary-foreground text-transparent bg-clip-text relative">
           <h1 className="text-9xl font-bold text-center md:text-[300px]">
-            Plura
+            SiteSnap
           </h1>
         </div>
-        <div className="flex justify-center items-center relative md:mt-[-70px]">
+        <div className="flex justify-center items-center relative md:mt-[-60px]">
           <Image
             src={'/assets/preview.png'}
             alt="banner image"
