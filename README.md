@@ -107,29 +107,48 @@ Screenshots of the Project 📸
 <p align="center">
    <a href="">
      <h1>
-    Team page 👇
+    Subaccount Dashboard page 👇
      </h1>
   </a>
   
-![Image Alt text](/public/Cardpage.png)
+![Image Alt text](/public/subaccountdashboard.png)
 
 
 <p align="center">
    <a href="">
      <h1>
-    Team page 👇
+    Media Upload page 👇
      </h1>
   </a>
   
-![Image Alt text](/public/Cardpage.png)
+![Image Alt text](/public/mediaupload.png)
 
 
 
 <p align="center">
    <a href="">
      <h1>
-    Team page 👇
+    Pipeline page 👇
      </h1>
   </a>
   
-![Image Alt text](/public/Cardpage.png)
+![Image Alt text](/public/pipeline.png)
+
+
+<p align="center">
+   <a href="">
+     <h1>
+    Create Funnel page 👇
+     </h1>
+  </a>
+  
+![Image Alt text](/public/createfunnel.png)
+
+<p align="center">
+   <a href="">
+     <h1>
+    Contact page 👇
+     </h1>
+  </a>
+  
+![Image Alt text](/public/contact.png)
