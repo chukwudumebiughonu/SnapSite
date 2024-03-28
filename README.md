@@ -37,7 +37,7 @@ Screenshots of the Project 📸
   </a>
 </p>
 
-![Image Alt text](/public/homepage.png)
+![Image Alt text](/public/landingpage.png)
 
 <p align="center">
    <a href="">
