@@ -47,7 +47,7 @@ Screenshots of the Project 📸
 <p align="center">
    <a href="">
      <h1>
-    Organization Page 👇
+    Agency Page 👇
      </h1>
   </a>
   
@@ -56,16 +56,79 @@ Screenshots of the Project 📸
 <p align="center">
    <a href="">
      <h1>
-    Board Page 👇
+    Settings Page 👇
      </h1>
   </a>
   
-![Image Alt text](/public/agencydashboard.png)
+![Image Alt text](/public/settings.png)
 
 <p align="center">
    <a href="">
      <h1>
-    Card Page 👇
+    Team page 👇
+     </h1>
+  </a>
+  
+![Image Alt text](/public/team.png)
+
+
+<p align="center">
+   <a href="">
+     <h1>
+    Launchpad page 👇
+     </h1>
+  </a>
+  
+![Image Alt text](/public/launchpad.png)
+
+
+
+<p align="center">
+   <a href="">
+     <h1>
+   Billing page 👇
+     </h1>
+  </a>
+  
+![Image Alt text](/public/billing.png)
+
+
+
+<p align="center">
+   <a href="">
+     <h1>
+    Subaccounts page 👇
+     </h1>
+  </a>
+  
+![Image Alt text](/public/subaccounts.png)
+
+
+<p align="center">
+   <a href="">
+     <h1>
+    Team page 👇
+     </h1>
+  </a>
+  
+![Image Alt text](/public/Cardpage.png)
+
+
+<p align="center">
+   <a href="">
+     <h1>
+    Team page 👇
+     </h1>
+  </a>
+  
+![Image Alt text](/public/Cardpage.png)
+
+
+
+<p align="center">
+   <a href="">
+     <h1>
+    Team page 👇
      </h1>
   </a>
   
