@@ -1,39 +1,67 @@
-create application with: bunx create-next-app@latest .
-create an account with uploadthing, generate an api key. uploadthing will be used to upload images and files
+# About the  Project
 
-Setup Shadcn-ui with: bunx --bun shadcn-ui@latest init add
+<p>
+  TaskPad is a powerful yet user-friendly task management app built for teams and individuals who value clarity, structure, and visual appeal. It helps you streamline your workflow, stay focused on high-priority tasks, and collaborate effectively with others.
+</p>
 
-Setup local database with: MYSQL workbench
+👉 Live Demo: [Live Demo](https://taskpad-beta.vercel.app)
 
-Update the next.config.mjs file
+## Key Features:
 
-create authentication with: clerk 
+* **Seamless Collaboration**: Create workspaces (organizations) to invite teammates, manage roles, and work together on shared goals.
+* __Structured Organization__: Visualize your projects with customizable boards, lists, and cards. Leverage drag-and-drop functionality for effortless task organization and prioritization.
+* **Enhanced Task Clarity**: Add detailed descriptions, track activity logs, and utilize beautiful Unsplash cover images to set the tone for each board.
+* __Transparency and Accountability__: Access a comprehensive activity log for your entire organization to stay informed and responsible.
+* **Flexible Growth**: Choose between free and paid plans. The free plan allows for a limited number of boards, while paid subscriptions offer unlimited boards and additional features to scale with your needs.
+* **Modern, Intuitive Design**: Enjoy a beautiful user interface built with shadenUI and TailwindCSS, combining elegance with ease of use.
+* **Robust Foundation**: Tasp is powered by a secure MySQL database and leverages Prisma ORM for efficient data management.
 
-add clerk themes with: bun add @clerk/themes
+## Tools and Technonlogy
+* **TypeScript**
+* **Next.js 14**
+* **Bun**
+* **ShadcnUI**
+* **TailwindCSS**
+* **Prisma**
+* **MySQL**
+* **Stripe connect**
+* **Clerk** for authentication
+  
+Screenshots of the Project 📸
 
-install uploadthing with : bun add uploadthing @uploadthing/react
+<p align="center">
+   <a href="![Image Alt text](/public/landingpage.png)">
+     <h1>
+    Landing Page 
+     </h1>
+  </a>
+</p>
 
-install clerk/nextjs with: bun add @clerk/nextjs
+![Image Alt text](/public/homepage.png)
 
-intall prisma for bun with: bun add prisma @prisma/client
+<p align="center">
+   <a href="">
+     <h1>
+    Organization Page 👇
+     </h1>
+  </a>
+  
+![Image Alt text](/public/organizationpage.png)
 
-initialize prisma with: bunx prisma init --datasource-provider mysql 
+<p align="center">
+   <a href="">
+     <h1>
+    Board Page 👇
+     </h1>
+  </a>
+  
+![Image Alt text](/public/boardpage.png)
 
-generate prisma with: bunx prisma generate
-
-push db with: bunx prisma db push
-
-add tremor with : bun add @tremor/react
-add uuid with : bun add uuid and then bun add @types/uuid
-
-add tanstack with: bun add @tanstack /react-table
-
-install drag and drop with: bun add react-beautiful-dnd
-
-add it types with: bun add @types/react-beautiful-dnd 
-
-install stripe with: bun add stripe
-
-install stripe/stripe-js with: bun add @stripe/stripe-js
-
-install @stripe/react-stripe-js with: bun add @stripe/react-stripe-js
+<p align="center">
+   <a href="">
+     <h1>
+    Card Page 👇
+     </h1>
+  </a>
+  
+![Image Alt text](/public/Cardpage.png)
