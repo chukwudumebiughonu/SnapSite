@@ -46,7 +46,7 @@ Screenshots of the Project 📸
      </h1>
   </a>
   
-![Image Alt text](/public/organizationpage.png)
+![Image Alt text](/public/agencydashboard.png)
 
 <p align="center">
    <a href="">
@@ -55,7 +55,7 @@ Screenshots of the Project 📸
      </h1>
   </a>
   
-![Image Alt text](/public/boardpage.png)
+![Image Alt text](/public/agencydashboard.png)
 
 <p align="center">
    <a href="">
