@@ -1,22 +1,25 @@
 # About the  Project
 ## SiteSnap: Revolutionizing Agency Management with a Multi-Vendor SaaS Solution
 ## Overview
-SiteSnap is a cutting-edge white-labelled Software as a Service (SaaS) platform designed to empower agency owners and their clients with a comprehensive suite of tools for managing websites, funnels, and client relationships. By leveraging SiteSnap, agency owners can seamlessly manage their clients through subaccounts, providing them with a personalized experience tailored to their specific needs.
-<p>
-SiteSnap is a white labelled mutii tenant SaaS application that empowers agency owners. Sitesnap enable agency owners to manage client through subaccounts, with full website and funnel builder agency owner able to build unlimited funnel and effectively manage their client 
-</p>
+SiteSnap is a cutting-edge white-labelled Software as a Service (SaaS) platform designed to empower agency owners and their clients with a comprehensive suite of tools for managing websites, funnels, and client relationships. By leveraging SiteSnap, agency owners can seamlessly manage their clients through subaccounts, providing them with a personalized experience tailored to their specific needs
 
-👉 Live Demo: [Live Demo](https://taskpad-beta.vercel.app)
+👉 Live Demo: [Live Demo](https://sitesnap.vercel.app)
 
 ## Key Features:
-
-* **Seamless Collaboration**: Create workspaces (organizations) to invite teammates, manage roles, and work together on shared goals.
-* __Structured Organization__: Visualize your projects with customizable boards, lists, and cards. Leverage drag-and-drop functionality for effortless task organization and prioritization.
-* **Enhanced Task Clarity**: Add detailed descriptions, track activity logs, and utilize beautiful Unsplash cover images to set the tone for each board.
-* __Transparency and Accountability__: Access a comprehensive activity log for your entire organization to stay informed and responsible.
-* **Flexible Growth**: Choose between free and paid plans. The free plan allows for a limited number of boards, while paid subscriptions offer unlimited boards and additional features to scale with your needs.
-* **Modern, Intuitive Design**: Enjoy a beautiful user interface built with shadenUI and TailwindCSS, combining elegance with ease of use.
-* **Robust Foundation**: Tasp is powered by a secure MySQL database and leverages Prisma ORM for efficient data management.
+* **Multi-Vendor B2B2B SaaS**: SiteSnap supports a multi-vendor B2B2B model, enabling agencies to manage multiple vendors and clients efficiently.
+* __Agency and Subaccounts__: Agency owners can create and manage subaccounts for their clients, ensuring a secure and personalized experience.
+* **Unlimited Funnel Hosting**: With SiteSnap, agency owners can host an unlimited number of funnels, allowing for extensive marketing strategies.
+* __Full Website & Funnel Builder__: Our platform offers advanced tools for building and managing websites and funnels, ensuring that agency owners can effectively engage their clients.
+* **Role-Based Access**: Customize access levels for different users within your agency, ensuring that only authorized personnel can access sensitive information.
+* __Stripe Integration__: SiteSnap integrates with Stripe for subscription plans, add-on products, and connects Stripe accounts for all users, enabling agency owners to charge application fees per sale and recurring sales.
+* **Custom Dashboards**: Tailor your dashboard to your needs, providing insights into your agency's performance and client interactions.
+* __Media Storage and Product Sync__: Store and manage media files, and sync your Stripe products for seamless inventory management.
+* **Custom Checkouts on Funnels**: Enhance your funnels with custom checkouts, providing a personalized shopping experience for your clients.
+* __Lead Generation__: Generate leads directly from your funnels, ensuring that your marketing efforts are paying off.
+* **Project Management System**: Manage your projects efficiently with our built-in project management system, including Kanban boards for task organization.
+* __Notifications and Performance Metrics__: Stay informed with real-time notifications and access detailed performance metrics for your funnels and agency.
+* **Light & Dark Mode**: Choose the interface that suits you best, with options for both light and dark modes.
+* __Functioning Landing Page__: Create engaging landing pages that convert visitors into leads or customers.
 
 ## Tools and Technonlogy
 * **TypeScript**
